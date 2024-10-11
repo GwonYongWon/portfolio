@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        /*
+                CSS 속성으로 셀의 경계를 처리하는 방식을 지정
+                separate : 기본값, 셀의 경계를 분리
+                collapse : 셀의 경계를 하나로 결합
+    
+            */
+        border-collapse: collapse;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- 표의 제목을 만드는 태그 -->
+      <caption>
+        표의 제목
+      </caption>
+      <!-- <tr> : 테이블의 행을 만드는 태그(table row) -->
+      <tr>
+        <!-- <th> : 테이블의 열을 만드는 태그(table header, 컬럼명처럼 사용) -->
+        <th>컬럼명1</th>
+        <th>컬럼명2</th>
+        <th>컬럼명3</th>
+      </tr>
+      <tr>
+        <!-- <td> : 테이블의 열을 만드는 태그(table data) -->
+        <td>표의 셀1</td>
+        <td>표의 셀2</td>
+        <td>표의 셀3</td>
+      </tr>
+      <tr>
+        <td>표의 셀4</td>
+        <td>표의 셀5</td>
+        <td>표의 셀6</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <table>
+      <caption>
+        전화번호부
+      </caption>
+      <tr>
+        <th colspan="2">이름</th>
+        <th>나이</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td rowspan="2">호시노</td>
+        <td rowspan="2">아이</td>
+        <td rowspan="2">17</td>
+        <td>010-1111-2222</td>
+      </tr>
+      <tr>
+        <td>010-1111-2223</td>
+      </tr>
+      <tr>
+        <td>호시노</td>
+        <td>루비</td>
+        <td>15</td>
+        <td>010-2222-3333</td>
+      </tr>
+    </table>
+  </body>
+</html>

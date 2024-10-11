@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- HTML 소스의 설명글은 이렇게 처리함-->
+    <script>
+      // 주석(한줄 설명글인 경우)
+      /*
+            설명글이 여러줄인 경우 주석
+        */
+      // 변수
+      // var(var 문은 변수를 선언하고, 선택적으로 초기화할 수 있습니다.),
+      // let(var 선언에 대한 개선을 반영한 let이 현재 변수 선언에서 선호되고 있습니다. ),
+      // const(const로 선언된 변수는 일정한 상수 값을 유지)
+      /*
+      변수명에는 한글 사용불가, 영문과 숫자, 일부 특수문자(_,$)만 사용가능
+
+      기본형 : var 변수명; 또는 var 변수명=값;
+      문자열 : var 변수="사용할 문자나 숫자";
+      숫자형 : var 변수=숫자; 또는 Number("문자형 숫자");
+      논리형 : var 변수=true or false; 또는 Boolean(데이터);
+      null(변수에 저장된 값) & underfined(변수 s에 값이 등록되기 전의 기본 값) 데이터
+      : var s; // undefined var t=hello; t=null;
+      */
+      var a = 10;
+      a = 1.23;
+      var a = "안녕";
+      var b = "Hello";
+      let c = 20;
+      // let c = 30; //err 동일한 이름의 변수명 재선언 불가
+      const d = true;
+      //  d = false;
+
+      console.log(a); // clg 단축키
+      console.log(b);
+      console.log(c);
+      console.log(d);
+      // 데이터 타입
+      /*
+        1. Number
+        2. String
+        3. Underfined
+        4. Null
+        5. Boolean
+        6. Object
+      */
+
+      console.log("-----NaN-----"); // 전역 NaN 속성은 Not-A-Number(숫자가 아님)를 나타냅니다.
+      let point = 123;
+      console.log(point);
+      console.log(typeof point); // typeof : 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을때! ex) typeof 변수 또는 데이터
+      point = -1.23;
+      console.log(typeof point);
+
+      // NaN : Not a Number
+      point = 1 * "A";
+      console.log(point);
+      console.log(typeof Nan);
+      console.log(typeof point);
+
+      // String : "", "" 사이의 문자
+
+      /*
+          underfined : 변수가 선언되었지만 아직 값을
+          할당되지 않았을 때의 기본 값
+      */
+      let e;
+      console.log(e);
+
+      /*
+          null : '값이 없는 상태'
+          변수나 객체 속성이 빈 값임을 명시적으로 나타낼때 사용
+      */
+      console.log("-----null-----");
+      f = null;
+      console.log(f);
+      console.log(typeof f);
+
+      /*
+          null vs underfined
+          == 연산자 : null과 underfined는 동등연산자로(==)로 비교할 때 같다고 말할 수 있다.
+          두 값이 모두 '비어 있음' 을 나타냄.
+          == 연산자 : 일치연산자(=== )는 값과 타입을 모두 비교하므로 null과 underfined는 일치하지 않다.
+      */
+      console.log(null == undefined); // true
+      console.log(null === undefined); // false
+      console.log(typeof undefined); // "underfined"
+      console.log(typeof null); // "object"
+
+      // Boolean : true, false
+
+      // Object : { name : value} 형태
+      let book = {
+        title: "책",
+        point: 123,
+      };
+      console.log(book);
+      console.log(typeof book);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>목록 만드는 태그</title>
+  </head>
+  <body>
+    <!-- 
+        목록을 만드는 태그 ul, ol, dl
+        <ol> : 순서가 있는 목록(ordered list)
+        <ul> : 순서가 없는 목록(unorder list)
+            <li> : 목록 요소(list item)
+        <dl> : 용어를 설명하는 목록(description list)
+            <dt> : 정의되는 용어의 제목(description term)
+            <dd> : 용어에 대한 설명(description definition)
+    -->
+
+    <hl>Front-end 학습 로드맵</hl>
+    <ol>
+      <li>HTML/CSS</li>
+      <li>Javascript</li>
+      <ul>
+        <li>데이터 타입</li>
+        <li>내장 함수</li>
+        <li>DOM 객체</li>
+      </ul>
+      <li>JQuery</li>
+    </ol>
+
+    <!-- <ul> 순서가 없는 목록 -->
+    <hl>쇼핑 목록</hl>
+    <ul>
+      <li>맥북</li>
+      <li>아이폰</li>
+      <li>그래픽 카드</li>
+    </ul>
+
+    <ol type="a" start="3">
+      <li>랑데뷰</li>
+      <li>마이쮸</li>
+      <li>우편엽서</li>
+    </ol>
+
+    <!-- disc, circle square -->
+    <ul style="list-style-type: square">
+      <li>텍스트1</li>
+      <li>텍스트2</li>
+      <li>텍스트3</li>
+      <li>텍스트4</li>
+    </ul>
+
+    <!-- <dl> : 설명 목록 -->
+    <dl>
+      <dt>올레 1코스</dt>
+      <dd>코스 : 시흥 초등학교 옆</dd>
+      <dd>거리 : 14.6km</dd>
+      <dd>난이도 : 중</dd>
+      <br />
+      <dt>올레 2코스</dt>
+      <dd>코스 : 광치기 해변</dd>
+      <dd>거리 : 12.8km</dd>
+      <dd>난이도 : 상</dd>
+    </dl>
+  </body>
+</html>

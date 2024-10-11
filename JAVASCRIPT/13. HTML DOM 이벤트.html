@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function upperCase() {
+        console.log("onchange");
+        let inputTag = document.querySelector("#fname");
+        inputTag.value = inputTag.value.toUpperCase();
+      }
+      function focusOn() {
+        console.log("onfocus");
+        document.querySelector("#fname").style.backgroundColor = "red"; //
+        /*
+        querySelector()
+        괄호 속에 제공한 선택자와 일치하는 문서 내 첫 번째 Element를 반환
+        일치하는 요소가 없다면 null 반환
+        */
+      }
+      function focusOut() {
+        console.log("onfocusout");
+        document.querySelector("#fname").style.backgroundColor = "white";
+      }
+      function btnClick() {
+        // alert('aaaa');
+        document.querySelector("#fname").value = "";
+      }
+      function changeRed() {
+        document.querySelector("#mouse").style.color = "red";
+      }
+      function changeBlue() {
+        let div = document.querySelector("#mouse");
+        div.style.color = "blue";
+      }
+      let i = 1; // 전역변수
+
+      function changImg() {
+        let file = ["아냐 짤.jpg", "삐까.jpg", "mimi037.jpg"];
+        let img = document.querySelector("#img");
+        if (i >= file.length) {
+          i = 0;
+        }
+        img.src = "../CSS/lmage/file/" + file[i];
+        i++;
+        // 1. element 가져오기
+        // 2. 해당 element의 src 속성에 파일이름까지의 경로값 변경
+        // 3. 클릭마다 이미지가 변경, zoro -> nami -> monkey -> zoro...
+      }
+    </script>
+  </head>
+  <body>
+    <label for="fname">이름 입력 : </label>
+    <input
+      type="text"
+      name="fname"
+      id="fname"
+      onchange="upperCase()"
+      onfocus="focusOn()"
+      onfocusout="focusOut()"
+    />
+    <input type="button" value="초기화" onclick="btnClick()" />
+    <br /><br />
+    <div
+      id="mouse"
+      onmouseover="changeRed()"
+      onmouseout="changeBlue()"
+      style="font-size: x-large"
+    >
+      마우스를 올려보세요
+    </div>
+    <br />
+    <input type="button" value="변경" onclick="changImg()" />
+    <br />
+    <img src="../CSS/lmage/file/아냐 짤.jpg" width="200px" id="img" />
+  </body>
+</html>
+<!--
+HTML 문서 구조
+
+HTML 문서의 <head> 태그 내에는 메타 정보와 문서 제목이 정의됩니다.
+<body> 태그에는 입력 필드, 초기화 버튼, 마우스 이벤트와 관련된 <div> 요소, 이미지 변경 버튼, 초기 이미지가 포함됩니다.
+JavaScript 함수 설명
+
+upperCase(): 입력 필드(#fname)의 값을 대문자로 변환합니다.
+focusOn(): 입력 필드(#fname)에 포커스가 들어오면 배경색을 빨간색으로 변경합니다.
+focusOut(): 입력 필드(#fname)에서 포커스가 빠져나가면 배경색을 원래대로 하얀색으로 변경합니다.
+btnClick(): 초기화 버튼을 클릭하면 입력 필드(#fname)의 값을 비웁니다.
+changeRed(): 마우스를 <div id="mouse"> 위에 올리면 글자 색상을 빨간색으로 변경합니다.
+changeBlue(): 마우스를 <div id="mouse">에서 내리면 글자 색상을 파란색으로 변경합니다.
+changImg(): 이미지를 순환하며 변경합니다. 클릭할 때마다 다음 이미지로 변경됩니다.
+HTML 이벤트 처리
+
+입력 필드(#fname)에서 onchange, onfocus, onfocusout 이벤트를 감지하여 각각 upperCase(), focusOn(), focusOut() 함수를 호출합니다.
+마우스 이벤트는 <div id="mouse">에서 onmouseover와 onmouseout 이벤트를 감지하여 changeRed(), changeBlue() 함수를 호출합니다.
+이미지 변경 버튼을 클릭하면 onclick 이벤트로 changImg() 함수를 호출하여 이미지를 변경합니다.
+-->

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Object Model</title>
+    <script>
+      /*
+            BOM : Browser Object Model(BOM 클래스 중 상위 순서)
+            1. window
+            2. screen
+            3. location
+            4. navigator
+            5. alert(alert, confirm, prompt)
+            6. history
+
+            BOM -> DOM        
+        */
+
+      function closeWindow() {
+        window.close();
+      }
+      function openWindow() {
+        window.open("https://www.naver.com");
+        let w = screen.width / 2;
+        let h = screen.height / 2;
+        let t = screen.height / 4;
+        let l = screen.width / 4;
+
+        let win = window.open(
+          "https://www.naver.com",
+          "_blank",
+          "top=" + t + ", left=" + l + ", width=" + w + ", height=" + h
+        );
+      }
+      function screenInfo() {
+        let x = screen.width;
+        let y = screen.height;
+        alert(x + " * " + y);
+      }
+      function locationHref() {
+        location.href = "https://google.com";
+      }
+      function navigatorInfo() {
+        alert(navigator.userAgent);
+      }
+      function alertWindow() {
+        alert("키오츠케로~!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      }
+      function confirmWindow() {
+        let result = confirm("정말 퇴교하시겠습니까?");
+        alert(result);
+      }
+      function goFoward() {
+        history.forward();
+      }
+      function goBack() {
+        history.back();
+      }
+
+      function output1() {
+        let d = new Date();
+        let str = "";
+
+        let year = d.getFullYear();
+        let month = d.getMonth() + 1;
+        let date = d.getDate();
+        let arr = ["일", "월", "화", "수", "목", "금", "토"];
+        let day = arr[d.getDay()];
+        let hour = d.getHours();
+        let min = d.getMinutes();
+        let sec = d.getSeconds();
+
+        str += `${year}년 ${month}월 ${date}일 `;
+        str += `${day}요일 `;
+        str += `${hour}시 ${min}분 ${sec}초`;
+
+        let div = document.querySelector("#time");
+        div.innerHTML = str;
+      }
+      function output2() {
+        // 콜백 함수
+        // 다른 함수의 인수로 전달되어 나중에 호출되는 함수
+        // setTimeout()
+        // 지정한 시간이 지난 후에 한번 콜백 함수를 실행
+        setTimeout(function () {
+          let d = new Date();
+          alert(d.toLocaleString());
+        }, 3000); // 첫 번째 인자 : 함수, 두 번째 인자 : 시간(milliseconds)
+      }
+
+      let timer; // 전역 변수
+      function starPlatina() {
+        timer = setInterval(function () {
+          let d = new Date();
+          let hour = d.getHours();
+          let min = d.getMinutes();
+          let sec = d.getSeconds();
+          let str = "";
+
+          str += `${hour < 10 ? `0${hour}` : hour}`;
+          str += ` : ${min < 10 ? `0${min}` : min}`;
+          str += ` : ${sec < 10 ? `0${sec}` : sec}`;
+
+          document.querySelector("#time2").innerHTML = str;
+        }, 1000);
+      }
+      function theWorld() {
+        clearInterval(timer);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>JavaScript Window</h2>
+
+    <input type="button" onclick="closeWindow()" value="창 닫기" />
+    <input type="button" onclick="openWindow()" value="창 열기" />
+    <input type="button" onclick="screenInfo()" value="화면 정보" />
+    <input type="button" onclick="locationHref()" value="주소 이동" />
+    <input type="button" onclick="navigatorInfo()" value="브라우저 정보" />
+    <input type="button" onclick="alertWindow()" value="경고창" />
+    <input type="button" onclick="confirmWindow()" value="확인창" />
+    <input type="button" onclick="goFoward()" value="앞으로" />
+    <input type="button" onclick="goBack()" value="뒤로" />
+    <hr />
+    <input type="button" onclick="output1()" value="시간 출력(즉시 한번)" />
+    <div id="time"></div>
+    <input type="button" onclick="output2()" value="시간 출력(잠시 후 한번)" />
+    <input
+      type="button"
+      onclick="starPlatina()"
+      value="시간의 흐름에 가둬주마"
+    />
+    <input type="button" onclick="theWorld()" value="the World" />
+    <div id="time2"></div>
+  </body>
+</html>
+<!--
+  HTML 문서 구조
+  HTML 문서의 <head> 태그 내에는 메타 정보와 문서 제목이 정의됩니다.
+  <body> 태그에는 JavaScript로 정의된 함수들과 버튼들이 포함되어 있습니다.
+
+  JavaScript 함수 설명
+  closeWindow(): 현재 창을 닫는 함수를 호출합니다.
+  openWindow(): 새 창을 여는 함수를 호출하며, 새 창의 위치와 크기를 설정합니다.
+  screenInfo(): 현재 화면의 너비와 높이를 알려주는 함수입니다.
+  locationHref(): 현재 창의 URL을 변경하여 지정된 URL로 이동합니다.
+  navigatorInfo(): 현재 브라우저의 사용자 에이전트 정보를 알려주는 함수입니다.
+  alertWindow(): 경고창을 띄우는 함수입니다.
+  confirmWindow(): 확인창을 띄우고 사용자의 선택 결과를 반환합니다.
+  goFoward(): 브라우저의 앞으로 가기 기능을 수행합니다.
+  goBack(): 브라우저의 뒤로 가기 기능을 수행합니다.
+  output1(): 현재 시간을 즉시 한 번 출력하는 함수입니다.
+  output2(): 3초 후에 현재 시간을 알려주는 함수입니다.
+  starPlatina(): 1초마다 현재 시간을 업데이트하는 함수입니다.
+  theWorld(): 시간 업데이트를 멈추는 함수입니다.
+  HTML 이벤트 처리
+
+  각 버튼들은 onclick 이벤트로 해당 함수들을 호출하여 원하는 기능을 수행합니다.
+  시간을 출력하는 기능들은 setTimeout과 setInterval 함수를 사용하여 비동기적으로 처리하고 있습니다.
+-->

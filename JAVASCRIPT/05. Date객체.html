@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date 객체</title>
+    <script>
+      // Date 객체 p.92
+      let today = new Date(); // Date() 객체를 사용하여 현재 시간을 나타내는 새로운 날짜 객체를 생성합니다.
+      let nowMonth = today.getMonth();
+      // getMonth() 메서드는 날짜 객체에서 현재 월을 가져옵니다.
+      // 월은 0부터 시작하므로, 실제 달보다 1 작은 값을 반환합니다. 예를 들어, 1월은 0, 2월은 1과 같이 됩니다.
+      let nowDate = today.getDate(); // getDate() 메서드는 현재 월의 일(day of the month)을 가져옵니다. 1에서 31까지의 값을 반환합니다.
+      let nowDay = today.getDay(); // getDay() 메서드는 현재 요일을 가져옵니다. 일요일부터 토요일까지 0부터 6까지의 숫자로 반환됩니다.
+
+      console.log(nowDate); // 현재 월의 일을 콘솔에 출력합니다.
+      console.log(nowDay); // 현재 요일을 숫자로 출력합니다 (0은 일요일, 1은 월요일, ..., 6은 토요일).
+      console.log(today.getHours()); // 현재 시간을 시간 단위로 출력합니다 (0부터 23까지).
+      console.log(today.getFullYear()); // 현재 연도를 출력합니다.
+      console.log(today.getSeconds()); // 현재 시간의 초를 출력합니다.
+      console.log(today.getMilliseconds()); // 현재 시간의 밀리초를 출력합니다.
+    </script>
+  </head>
+  <body></body>
+</html>

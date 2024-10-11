@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jq_folder/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("h2").css("color", "blue");
+        $("#text1").css("color", "red");
+        $(".text2").css("color", "white");
+        $("p.text2").css("background-color", "black");
+        $("p:first").css("color", "green");
+
+        $('input[type="text"]').css("background-color", "pink");
+        $("#select1").css("background-color", "beige");
+        $("#select1 option").css("background-color", "lightblue");
+
+        // odd 홀수, even 짝수
+        $("tr:odd").css("background-color", "beige");
+      });
+    </script>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px dotted black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th {
+        width: 100px;
+        height: 30px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>[ JQuery 선택자]</h2>
+    <p>p태그</p>
+    <p id="text1">id가 있는 p태그</p>
+    <p class="text2">class가 있는 p태그</p>
+    <p>p태그</p>
+    <input type="text" />
+    <input type="checkbox" />
+    <select id="select1">
+      <option value="1">aaa</option>
+      <option value="2">bbb</option>
+      <option value="3">ccc</option>
+    </select>
+
+    <hr />
+
+    <table>
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>주소</th>
+      </tr>
+      <tr>
+        <td>홍길동</td>
+        <td>20</td>
+        <td>서울</td>
+      </tr>
+      <tr>
+        <td>이순신</td>
+        <td>30</td>
+        <td>부산</td>
+      </tr>
+      <tr>
+        <td>아냐 포저</td>
+        <td>7</td>
+        <td>도쿄</td>
+      </tr>
+      <tr>
+        <td>호시노 아이</td>
+        <td>18</td>
+        <td>도쿄</td>
+      </tr>
+      <tr>
+        <td>호시노 아쿠아마린</td>
+        <td>17</td>
+        <td>도쿄</td>
+      </tr>
+      <tr>
+        <td>호시노 루비</td>
+        <td>17</td>
+        <td>도쿄</td>
+      </tr>
+      <tr>
+        <td>아리마 카나</td>
+        <td>18</td>
+        <td>도쿄</td>
+      </tr>
+    </table>
+  </body>
+</html>

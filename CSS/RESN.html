@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .side {
+        float: left;
+        width: 20%;
+        height: 100%;
+        margin: 0;
+        text-align: center;
+        border-right: 2px solid black;
+        box-sizing: border-box;
+      }
+
+      .profile {
+        margin-top: 11%;
+        margin-bottom: 10%;
+        width: 90%;
+        height: 60%;
+      }
+
+      .slogo {
+        width: 80%;
+        height: 50%;
+      }
+
+      .shr {
+        border: 1.5px solid black;
+        width: 100%;
+      }
+
+      .seongname p {
+        font-weight: 700;
+        font-size: 200%;
+      }
+
+      .seongname p:hover {
+        color: magenta;
+      }
+
+      /* .sengjob p:hover {
+        text-decoration: underline;
+      } */
+
+      .smail {
+        margin-top: 3%;
+        height: 4%;
+        box-sizing: border-box;
+      }
+
+      .smail p {
+        font-weight: 400;
+        font-size: 100%;
+      }
+
+      .smail a:hover {
+        color: magenta;
+      }
+
+      .cpr p {
+        font-weight: 400;
+        font-size: 80%;
+        color: lightgray;
+      }
+
+      .main {
+        float: left;
+        width: 80%;
+        height: 100%;
+        background-color: white;
+        overflow: hidden;
+      }
+
+      .mmenu {
+        width: 100%;
+        height: 10%;
+        border-bottom: 2px solid black;
+      }
+
+      .mpro,
+      .mject,
+      .mfav {
+        display: inline-block;
+        padding-top: 0.3%;
+        width: 33%;
+        height: 100%;
+        background-color: white;
+        box-sizing: border-box;
+        font-weight: 700;
+        font-size: 112%;
+        text-align: center;
+        color: black;
+      }
+
+      .mpro p:hover,
+      .mject p:hover,
+      .mfav p:hover {
+        background-color: black;
+        color: white;
+        text-decoration: underline;
+      }
+
+      .mpro,
+      .mject {
+        border-right: 2px solid black;
+      }
+
+      .mfav {
+        border-left: 2px solid black;
+      }
+
+      .mpimgb {
+        float: left;
+        margin-left: 2%;
+        width: 45%;
+        height: 100%;
+        clear: both;
+      }
+
+      .mpimgb img {
+        margin-top: 9%;
+      }
+
+      .mptxb {
+        float: right;
+        margin-right: 2%;
+        width: 45%;
+        height: 100%;
+      }
+
+      .name {
+        padding-top: 10%;
+        padding-left: 5%;
+        font-weight: 700;
+        font-size: 160%;
+        text-align: left;
+        color: black;
+      }
+
+      .name:hover {
+        color: magenta;
+      }
+
+      .info {
+        padding-top: 5%;
+        padding-left: 5%;
+        font-weight: 700;
+        font-size: 130%;
+        line-height: 230%;
+        text-align: left;
+        color: black;
+      }
+
+      .mhr1 {
+        border: 1.5px solid black;
+        height: 100%;
+        width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="side">
+      <div class="profile">
+        <div class="slogo">
+          <img
+            src="../CSS/lmage/file/아냐 짤.jpg"
+            width="300px"
+            alt="Anya Forger Image"
+          />
+        </div>
+        <div class="seongname">
+          <p>Anya Forger</p>
+        </div>
+        <div class="sengjob">
+          <p>안녕<br />초능력자야</p>
+        </div>
+        <hr class="shr" />
+        <div class="smail">
+          <p><a href="mailto:bmp0176511@gmail.com">아냐 이메일</a></p>
+        </div>
+        <div class="cpr">
+          <p>Anya Forger</p>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="mmenu">
+        <div class="mpro">
+          <p>&nbsp;HOME&nbsp;</p>
+        </div>
+        <div class="mject">
+          <p>&nbsp;STORY&nbsp;</p>
+        </div>
+        <div class="mfav">
+          <p>&nbsp;PROJECT&nbsp;</p>
+        </div>
+      </div>
+      <div class="mpimgb">
+        <!-- <img
+          src="../CSS/lmage/file/아냐 짤.jpg"
+          width="200px"
+          alt="Anya Forger Image"
+        /> -->
+      </div>
+      <hr class="mhr1" />
+      <div class="mpimgb">
+        <p class="name">아냐</p>
+        <p class="info">
+          스파이패밀리 <br />
+          포저가 딸 <br />
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

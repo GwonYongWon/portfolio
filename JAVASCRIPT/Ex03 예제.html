@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Image with Select</title>
+  </head>
+  <body>
+    <select id="imageSelector" onchange="changeImage()">
+      <option value="../CSS/lmage/file/아냐 짤.jpg">아냐 포저</option>
+      <option value="../CSS/lmage/file/삐까.jpg">뿌까</option>
+      <option value="../CSS/lmage/file/호시노 아이.jpg">호시노 아이</option>
+    </select>
+    <br /><br />
+    <img
+      id="displayImage"
+      src="../CSS/lmage/file/아냐 짤.jpg"
+      alt="Selected Image"
+      width="300"
+    />
+
+    <script>
+      function changeImage() {
+        var select = document.getElementById("imageSelector");
+        var image = document.getElementById("displayImage");
+        image.src = select.value;
+
+        /* function changeImage() {
+         let select = document.querySelector("#select");
+         let image = document.querySelector("#image");
+
+         for (let i = 0; i < select.length; i++) {
+           if (select.options[i].selected == true) {
+             img.src = "../CSS/lmage/file/" + select.options[i].value;
+           }
+         }
+       }*/
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문제</title>
+  </head>
+  <body>
+    <form>
+      <fieldset
+        style="width: 200px; background-color: beige; border: 2px solid black"
+      >
+        <legend><strong>회원정보</strong></legend>
+        <label for="id">아이디 : <br /></label>
+        <input type="text" name="id" id="id" class="cid" value="hong" /><br />
+        <label for="pw">패스워드 : <br /></label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="cid"
+        /><br />
+      </fieldset>
+      <br />
+      <fieldset
+        style="
+          width: 220px;
+          background-color: lightgray;
+          border: 2px solid black;
+        "
+      >
+        <legend><strong>과목</strong></legend>
+        HTML<input type="checkbox" name="subject" value="HTML" /> CSS<input
+          type="checkbox"
+          name="subject"
+          value="CSS"
+        />
+        JavaScript<input type="checkbox" name="subject" value="javaScript" />
+        <br />
+        상<input type="radio" name="grade" value="상" /> 중<input
+          type="radio"
+          name="grade"
+          value="중"
+        />
+        하<input type="radio" name="grade" value="하" />
+      </fieldset>
+      <br />
+      <fieldset
+        style="
+          width: 300px;
+          background-color: lightpink;
+          border: 2px solid black;
+        "
+      >
+        <legend><strong>각종정보</strong></legend>
+        URL <input type="url" /><br />
+        Email <input type="email" /><br />
+        숫자 <input type="number" /><br />
+        전화번호 <input type="tel" /><br />
+        색상 <input type="color" /><br />
+        범위 <input type="range" value="0" max="10" /><br />
+        날짜 <input type="date" /><br />
+        시간 <input type="time" /><br />
+        파일 <input type="file" /><br />
+      </fieldset>
+      <br />
+      <input type="submit" value="전송하기" />
+      <input type="reset" value="취소하기" />
+    </form>
+  </body>
+</html>

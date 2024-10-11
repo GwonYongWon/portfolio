@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jq_folder/jquery-3.7.1.min.js"></script>
+    <style>
+      .boxstyle {
+        color: yellow;
+        background-color: black;
+        width: 200px;
+        font-size: 30px;
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      // window.onload = function() {     }
+      // $(document).ready(function() {   })
+      $(function () {
+        $("#bt1").click(function () {
+          let s = $("h3").html();
+          console.log(s);
+
+          $("h3").each(function (i, ob) {
+            console.log(i, $(ob).html());
+          });
+        });
+        $("#bt2").click(function () {
+          let s = $("h3").text();
+          console.log(s);
+        });
+        $("#bt3").click(function () {
+          let s = $("#text1").val();
+          alert(s);
+        });
+
+        $("#btn4").click(function () {
+          $("#div1").html('<p style="color: red;">初めまして</p>');
+          $("#div2").html('<p style="color: red;">クォンヨンウォンです。</p>');
+          $("#text2").val("よろしく");
+          $("#text3").val("お願いするぜ");
+        });
+
+        $("#bt5").click(function () {
+          // 가져올 때 = $('선택자').attr('속성');
+          console.log($("#img1").attr("src"));
+          // 변경할 때 = $('선택자').attr('속성', '변경할 속성 값');
+          $("#img1").attr("src", "../CSS/lmage/file/아냐 짤.jpg");
+        });
+
+        $("#bt6").click(function () {
+          $("#img1").css("border", "2px solid red");
+          $("#img1").css("background-color", "red");
+
+          // jQuery 체이닝(chaining)은 여러 jQuery 메서드를
+          // 하나의 jQuery 객체에서 연속적으로 호출하는 기법
+          $("#img1").css("width", "400").css("height", "400");
+        });
+
+        $("#addBtn").click(function () {
+          $("p:last").addClass("boxstyle");
+        });
+        $("#removeBtn").on({
+          click: function () {
+            $("p:last").removeClass("boxstyle");
+          },
+          mouseover: function () {
+            alert("두번째 이벤트");
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>[ 문서 조작 함수 ]</h1>
+    <pre style="font-size: larger">
+        html(), text(), val(), attr(),
+        css(), addClass(), removeClass()
+    </pre>
+    <p><input type="button" id="bt1" value="html() 함수" /></p>
+    <p><input type="button" id="bt2" value="text() 함수" /></p>
+    <p><input type="button" id="bt3" value="val() 함수" /></p>
+
+    <h3><b>h3</b>태그를 사용한 문자열111</h3>
+    <h3><i>h3</i>태그를 사용한 문자열222</h3>
+    <p><input type="text" id="text1" /></p>
+    <hr />
+
+    <p><input type="button" id="btn4" value="값 변경" /></p>
+    <div id="div1">반갑다</div>
+    <div id="div2">나는 권용원이다.</div>
+    <p><input type="text" id="text2" value="자바 스크립트" /></p>
+    <p><textarea id="text3">제이쿼리</textarea></p>
+    <hr />
+
+    <p><input type="button" id="bt5" value="attr() 함수" /></p>
+    <p><input type="button" id="bt6" value="css() 함수" /></p>
+    <p>
+      <img src="../CSS/lmage/file/호시노 아이.jpg" id="img1" width="300px" />
+    </p>
+    <hr />
+
+    <p>마지막 p태그</p>
+    <input type="button" value="addClass" id="addBtn" />
+    <input type="button" value="removeClass" id="removeBtn" />
+  </body>
+</html>

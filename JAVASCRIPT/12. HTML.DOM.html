@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--
+        DOM (Documemt Object Model) : 문서 객체 모델
+        프로그램과 스크립트가 문서의 컨텐츠, 구조, 스타일 등에
+        동적으로 엑세스하여 업데이트 할 수 있도록 하는 
+        플랫폼 및 언어 중립적인 인터페이스 
+
+        HTML 엘리먼트 찾기
+         - document.getElementById(id)           : id로 엘리먼트 찾기
+         - document.getElementsByTagNam(name)    : 태그 이름으로 엘리먼트 찾기
+         - document.getElementsByClassName(name) : 클래스 이름으로 엘리먼트 찾기
+         - document.querySelector(선택자)        : 선택자로 엘리먼트 찾기
+         - document.querySelectorAll(선택자)     : 선택자로 다수의 엘리먼트 찾기
+
+         HTML 엘리먼트 변경하기
+          - element명.innerHTML = HTML 컨텐츠 : 엘리먼트의 HTML 내용 변경
+          - element명.attribute(속성 이름) = 변경할 속성 값 : 엘리먼트의 속성 값 변경
+          - element명.style.property(CSS 속성이름) = 변경할 스타일 값 : 엘리먼트의 스타일 변경
+        
+        HTML 엘리먼트 생성하기
+         - document.createElement(element) : 엘리먼트 생성
+         - document.addendChild(element)   : 엘리먼트 추가
+         - document.removelement(element)  : 엘리먼트 삭제
+         - document.replaceChild(element)  : 엘리먼트 교체
+         - document.write(text)            : HTML 쓰기
+    -->
+  </head>
+  <body>
+    <p id="demo">안녕하세요</p>
+    <p class="demo">안녕하세요</p>
+    <p class="demo">반갑습니다</p>
+    <input type="text" name="name" id="id" value="v김길동" />
+
+    <script>
+      document.getElementById("demo").innerHTML = "Hello World";
+      document.getElementById("id").value = "홍길동";
+      document.getElementById("demo").style.color = "red";
+
+      let button = document.createElement("button");
+      button.innerHTML = "전송하기";
+      document.body.appendChild(button);
+    </script>
+  </body>
+</html>
+<!--
+  document.getElementById("demo").innerHTML = "Hello World";
+  id가 "demo"인 <p> 태그의 내용을 "Hello World"로 변경합니다.
+  
+  document.getElementById("id").value = "홍길동";
+  id가 "id"인 <input> 태그의 값(value)을 "홍길동"으로 변경합니다.
+  
+  document.getElementById("demo").style.color = "red";
+  id가 "demo"인 <p> 태그의 글자 색상을 빨간색으로 변경합니다.
+-->

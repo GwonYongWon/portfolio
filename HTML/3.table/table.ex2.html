@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 예제2</title>
+    <style>
+      table,
+      td {
+        border: 2px solid black;
+      }
+      td {
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
+      }
+
+      table .tt {
+        background-color: lightgrey;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="4" style="background-color: lightcoral">1</td>
+      </tr>
+      <tr class="tt">
+        <td colspan="2" rowspan="2" style="width: 200px">5</td>
+        <td style="background-color: aqua">7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td style="background-color: blue">11</td>
+        <td style="background-color: blueviolet">2</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background-color: brown">13</td>
+        <td colspan="2" style="background-color: lightgreen">15</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!-- ctrl + / = 주석 -->
+
+<!-- HTML의 버전 정보를 표시, 웹 문서임을 나타내는 정보 -->
+<!DOCTYPE html>
+<!-- HTML 문서의 시작을 알리는 부분, 사용할 언어 지정 -->
+<html lang="kor">
+  <!-- 브라우저에 정보를 주는 태그 -->
+  <head>
+    <!-- 문서의 문자 인코딩 지정 -->
+    <meta charset="UTF-8" />
+    <!-- 반응형 디자인을 지원하여 다양한 장치에서 페이지가 잘 보이도록-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tittle : 해당 문서의 제목 -->
+    <title>HOME</title>
+    <!-- <script>, <style> -->
+  </head>
+  <!-- body 태그 안 : 브라우저에 실제로 표시되는 내용 -->
+  <body>
+    <h1>Welcome, HOME</h1>
+
+    <!-- 
+        <a>         : HTML 내에 링크를 생성하는 태그
+        href 속성   : 링크로 이동할 URL을 지정
+        target 속성 : 링크가 이동할 위치를 지정
+            _self   : 링크를 현재 창이나 프레임에서 열기(기본값)
+            _blank  : 링크를 새 탭이나 새 창에서 열기
+            _parent : 링크를 현재 프레임의 부모 프레임에서 열기
+            _top    : 링크를 최상위 프레임에서 열기
+    -->
+    <u1>
+      <li>
+        <a href="https://naver.com" target="_blank">네이버</a>
+      </li>
+      <li>
+        <a href="https://daum.net" target="_blank">다음</a>
+      </li>
+      <li>
+        <a href="https://google.com" target="_blank">구글</a>
+      </li>
+    </u1>
+
+    <!-- 내용물 분리할때 <hr />  -->
+    <hr />
+    <!-- 목차 같은 점 만들기 -->
+    <ul>
+      <li>
+        <!-- 상대경로, 절대경로 -->
+        <a href="./0.route/route.html">경로</a>
+      </li>
+      <li>
+        <a href="./1.image/image.html">이미지</a>
+      </li>
+      <li>
+        <a href="./2.text/text.1.html">문단, 텍스트 서식</a>
+      </li>
+      <li>
+        <a href="./2.text/text.1.html">목록만들기</a>
+      </li>
+      <li>
+        <a href="./3.table/table.html">테이블</a>
+      </li>
+      <li>
+        <a href="./4.form/form.html">폼</a>
+      </li>
+      <li>
+        <a href="./4.form/form2.html">Input 태그 종류</a>
+      </li>
+    </ul>
+  </body>
+</html>

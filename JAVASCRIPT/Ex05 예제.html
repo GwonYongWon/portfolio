@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주민등록번호 예제</title>
+    <style>
+        #gender {
+            color: blue;
+        }
+    </style>
+    <script>
+        function printInfo() {
+            // 주민등록번호 입력값 가져오기
+            var ssn = document.getElementById("ssn").value;
+
+            // 주민등록번호 유효성 검사
+            if (ssn.length !== 14 || !/^(\d{6})-(\d{7})$/.test(ssn)) {
+                document.getElementById("result").innerText = "올바른 주민등록번호 형식이 아닙니다.";
+                return;
+            }
+
+            // 주민등록번호에서 생년월일과 성별 추출
+            var year = parseInt(ssn.substring(0, 2));
+            var month = parseInt(ssn.substring(2, 4));
+            var day = parseInt(ssn.substring(4, 6));
+            var genderNum = parseInt(ssn.charAt(7));
+
+            // 출생연도 확인
+            var birthYear = (year < 22) ? 2000 + year : 1900 + year;
+
+            // 성별 구분
+            var gender = (genderNum % 2 === 1) ? "남자" : "여자";
+
+            // 나이 계산
+            var today = new Date();
+            var currentYear = today.getFullYear();
+            var age = currentYear - birthYear - 1;
+            if (today.getMonth() > month - 1 || (today.getMonth() === month - 1 && today.getDate() >= day)) {
+                age++;
+            }
+
+            // 결과 출력
+            var resultText = birthYear + "년생 " + age + "세 성별 <span id='gender'>" + gender + "</span>입니다"; // 변경된 부분
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</head>
+<body>
+    <label for="ssn">주민등록번호</label>
+    <input type="text" id="ssn" placeholder="ex.000000-0000000"></input>
+    <input type="button" id="btn" value="정보출력" onclick="printInfo()">
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window 예제</title>
+    <script>
+      window.onload = function () {
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+
+        let win; // 새창을 참조하는 변수
+        let time; // timer 함수를 참조하는 함수
+
+        btn1.addEventListener("click", function () {
+          win = window.open(
+            "./Ex07 sub.html",
+            "",
+            "top=100, left=100, width=100, hight=100"
+          );
+          timer = setInterval(function () {
+            win.moveTo(
+              Math.floor(Math.random() * 1920),
+              Math.floor(Math.random() * 1080)
+            );
+          }, 300);
+        });
+        btn2.addEventListener("click", function () {
+          clearInterval(timer);
+          win.close();
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <input type="button" value="클릭" id="btn1" />
+    <input type="button" value="멈춤" id="btn2" />
+  </body>
+</html>

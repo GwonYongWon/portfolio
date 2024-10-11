@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 5px solid red;
+        width: 600px;
+      }
+      .top {
+        background-color: aquamarine;
+        height: 50px;
+      }
+      .left {
+        background-color: blueviolet;
+        width: 400px;
+        height: 100px;
+        float: left;
+      }
+      .right {
+        background-color: orange;
+        width: 200px;
+        height: 100px;
+        float: right;
+      }
+      /*
+        clear : float 속성이 적용되면 다음 요소가
+        자동으로 float 속성을 받는데 이것을 해제시킴
+      */
+      .clear {
+        background-color: green;
+        height: 50px;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">float: none</div>
+      <div class="left">float: left</div>
+      <div class="right">float: right</div>
+      <div class="clear">float: clear</div>
+    </div>
+  </body>
+</html>

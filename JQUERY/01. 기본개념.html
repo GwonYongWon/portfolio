@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J-Query 기본 개념</title>
+    <script src="./jq_folder/jquery-3.7.1.min.js"></script>
+    <!--
+        JQuery
+        1. 어떤 브라우저를 사용하더라도 호환가능
+        2. CSS에서 객체들을 선택하는 선택자 규칙을 사용가능
+        3. 위의 기능들을 아주 작은 크기의 파일 하나로 스크립트 라이브어리 제공
+    -->
+  </head>
+  <body>
+    <img id="img1" src="../CSS/lmage/file/아냐 짤.jpg" width="300px" />
+    <script>
+      // jQuery 함수를 이용해 DOM객체를 감싸 jQuery로써 DOM을 사용하겠다.
+      //jQuery(img1).attr("src", "../CSS/lmage/file/호시노 아이.jpg");
+
+      $(img1).attr("src", "../HTML/1.image/file/요르 포저.jpg");
+    </script>
+  </body>
+</html>

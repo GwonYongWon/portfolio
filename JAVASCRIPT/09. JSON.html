@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+    <script>
+      /*
+            JSON (JavaScript Object Notation)은 자바스크립트
+            객체 표기법을 기반으로 한 데이터 교환 형식.
+            JSON은 사람이 읽기 쉬우면서도 기계가 쉽게 파싱하고
+            생성할 수 있는 형식으로, 웹 어플리케이션에서
+            서버와 클라이언트 간에 데이터를 교환하는데 주로 사용.
+
+            -DataType   -Java               -JSON            
+            Boolean     new Boolean()       let a = true;
+            Number      new Number()        let b = 10;
+            String      new String()        let c = "aaa";
+            Array       new Array()         let ar = [ ];
+            Object      new Object()        let ob = { };
+        */
+
+      // 문자열
+      let obj = '{"id": "aaa", "title": "bbb"}';
+      console.log("--- 문자열 ---");
+      console.log(obj.id);
+      console.log(obj["title"]);
+      console.log(typeof obj);
+
+      console.log("--- 문자열 => JSON 객체 ---");
+      let ob = JSON.parse(obj);
+      console.log(ob.id);
+      console.log(ob["title"]);
+
+      console.log("--- JSON 객체 => 문자열 ---");
+      let obj2 = { id: "aaa", title: "bbb" };
+      let ob2 = JSON.stringify(obj2);
+      console.log(typeof ob2);
+
+      window.onload = function () {
+        let person = {
+          name: "홍길동",
+          age: 30,
+          isStudent: false,
+          courses: ["Math", "Science", "History"],
+          address: {
+            street: "123 Main St",
+            city: "Anytown",
+            state: "CA",
+          },
+        };
+
+        // 보내는 쪽
+        let jsonString = JSON.stringify(person);
+        console.log(jsonString);
+        console.log(typeof jsonString);
+
+        // 받는 쪽
+        let jsonString2 =
+          '{"name":"홍길동","age":30,"isStudent":false,"courses":["Math","Science","History"],"address":{"street":"123 Main St","city":"Anytown","state":"CA"}}';
+        let person2 = JSON.parse(jsonString2);
+        console.log(person2);
+        console.log(typeof person2);
+
+        console.log(person2.name);
+        console.log(person2.courses[1]);
+
+        let contents = document.querySelector("#contents");
+        let str = "";
+        str += `<table>`;
+        str += `<caption>학생 정보</caption>`;
+        str += `<tr>`;
+        str += `<th>이름</th>`;
+        str += `<td>${person2.name}</td>`;
+        str += `</tr>`;
+        str += `<tr>`;
+        str += `<th>나이</th>`;
+        str += `<td>${person2.age}</td>`;
+        str += `</tr>`;
+        str += `<tr>`;
+        str += `<th>과목</th>`;
+        str += `<td>${person2.courses[0]}`;
+        str += `, ${person2.courses[1]}`;
+        str += `, ${person2.courses[2]}`;
+        str += `</td>`;
+        str += `</tr>`;
+        str += `<tr>`;
+        str += `<th>주소</th>`;
+        str += `<td>${person2.address.street}`;
+        str += `, ${person2.address.city}`;
+        str += `, ${person2.address.state}`;
+        str += `</td>`;
+        str += `</tr>`;
+        str += `</table>`;
+
+        contents.innerHTML = str;
+      };
+    </script>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      caption {
+        font-size: x-large;
+      }
+      th {
+        width: 100px;
+        height: 80px;
+        text-align: center;
+        background-color: beige;
+      }
+      td {
+        width: 300px;
+        height: 80px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contents"></div>
+  </body>
+</html>
+<!--
+  JSON 개요 및 데이터 유형 비교
+  JavaScript Object Notation (JSON)은 데이터 교환 형식으로, 객체 표기법을 기반으로 합니다. 자바와 비교하여 데이터 유형을 보여줍니다.
+  
+  문자열과 JSON 객체 변환
+  obj는 JSON 형식의 문자열을 나타냅니다. JSON.parse()를 사용하여 문자열을 객체로 변환하고, 
+  JSON.stringify()를 사용하여 객체를 JSON 문자열로 변환합니다.
+  
+  웹 페이지 로드 후 처리
+  window.onload 함수 내에서 person 객체를 정의하고, 이를 JSON 문자열로 변환하여 콘솔과 HTML에 출력합니다.
+  person2는 JSON 문자열을 파싱하여 객체로 변환하고, 이 객체의 속성을 콘솔에 출력하며, 동적으로 생성된 테이블로 HTML에 추가합니다.
+
+  CSS 스타일
+  테이블과 셀의 테두리 스타일을 설정하고, 표 캡션과 각 셀의 스타일을 지정합니다.
+  
+  동적으로 생성된 테이블 추가
+  JavaScript로 생성된 테이블을 HTML 요소인 #contents 내에 추가합니다.
+-->

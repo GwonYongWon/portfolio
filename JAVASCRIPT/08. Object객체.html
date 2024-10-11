@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object</title>
+    <script>
+      /*
+            Object Properties
+            데이터를 구조화하고 저장하는 방법
+             - { name : value } 의 형태
+        */
+
+      // 1. 객체 리터럴
+      const obj1 = {
+        name: "홍길동",
+        age: 30,
+      };
+      console.log(obj1);
+
+      // 2. new Object 생성
+      const obj2 = new Object();
+      obj2.name = "강감찬";
+      obj2.age = 40;
+      console.log(obj2);
+
+      // 3. 클래스 정의 객체 생성
+      class Human {
+        constructor(name, age) {
+          this.name = name; // this. 생성자에서 다른 생성자 호출할때 사용
+          this.age = age;
+        }
+      }
+      const obj3 = new Human("이순신", 50);
+      console.log(obj3);
+
+      // 객체의 속성 접근방법
+      // 1. 속성선택자, 점 표기
+      console.log("---- 점 ----");
+      console.log(obj1.name);
+      console.log(obj1.age);
+
+      // 2. 대괄호 표기
+      console.log("---- 대괄호 ----");
+      console.log(obj1["name"]);
+      console.log(obj1["age"]);
+
+      // 객체 생성
+      let person = {
+        firstName: "길동",
+        lastName: "홍",
+        id: "hong",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+
+      // 객체의 속성 처리
+      console.log("---- 객체의 속성 처리 ----");
+      // 속성 추가
+      person.age = 30;
+      console.log(person);
+      // 속성 변경
+      person.lastName = "김";
+      person["firstName"] = "개똥";
+      console.log(person);
+      // 속성 삭제
+      delete person.id;
+      console.log(person);
+
+      // 속성 확인
+      console.log(person);
+      console.log("--- 1 ---");
+      console.log(person.firstName);
+      console.log(person.lastName);
+      console.log(person.fullName());
+
+      console.log("--- 2 ---");
+      for (let item in person) {
+        console.log(item);
+        console.log(person[item]);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+<!--
+  설명:
+객체 리터럴 및 new Object 생성
+
+obj1: 객체 리터럴을 사용하여 객체를 생성하고 이름과 나이를 설정합니다.
+obj2: new Object()를 사용하여 객체를 생성한 후 이름과 나이를 설정합니다.
+obj3: 클래스 Human을 정의하고, 생성자를 통해 객체를 생성하여 이름과 나이를 설정합니다.
+객체의 속성 접근 방법
+
+console.log(obj1.name);과 console.log(obj1.age);를 통해 점 표기법을 사용하여 객체 속성에 접근합니다.
+console.log(obj1["name"]);과 console.log(obj1["age"]);를 통해 대괄호 표기법을 사용하여 객체 속성에 접근합니다.
+객체 생성과 속성 처리
+
+person 객체를 생성하고, firstName, lastName, id, fullName() 메서드를 포함시킵니다.
+속성 추가 (person.age = 30;), 속성 변경 (person.lastName = "김";, person["firstName"] = "개똥";), 속성 삭제 (delete person.id;)를 수행합니다.
+객체의 속성 확인
+
+console.log(person.firstName);, console.log(person.lastName);, console.log(person.fullName());을 통해 객체의 속성 값과 메서드 호출을 확인합니다.
+for...in을 사용한 객체 속성 순회
+
+for (let item in person) { console.log(item); console.log(person[item]); }를 통해 객체 person의 모든 속성을 순회하면서 속성 이름과 값을 출력합니다.
+이 코드는 JavaScript를 사용하여 객체를 생성하고 다양한 방법으로 속성을 추가, 변경, 삭제하며 객체의 속성에 접근하고 순회하는 방법을 보여줍니다.
+-->

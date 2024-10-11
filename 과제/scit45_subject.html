@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Front-End</title>
+    <!-- CSS 파일 가져오기 -->
+    <link rel="stylesheet" href="./subject_style.css" />
+
+    <!-- JS 파일 가져오기 -->
+    <script src="./subject_script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="frame">
+      <!-- ---------------------header--------------------- -->
+      <header>
+        <!-- 제목 태그 생성 -->
+        <h1 id="head">[ 정보처리기사 필기 결과 ]</h1>
+        <h2># 가채점 예상 점수를 입력하세요</h2>
+      </header>
+
+      <!-- --------------------- main --------------------- -->
+      <main id="main">
+        <h4 id="answer">맞춘 개수</h4>
+
+        <!-- 목록태그 생성 -->
+        <!-- 점수 입력태그 생성 -->
+        <!-- 예상점수 출력용 텍스트태그 생성 -->
+        <div>
+          <div>
+            <ol>
+              <li>
+                <span class="score"> 소프트웨어 설계: </span>
+                <span
+                  >20문제 중
+                  <input
+                    type="text"
+                    id="input1"
+                    class="scoreinput"
+                    placeholder="0"
+                    onkeyup="keyup1()"
+                  />
+                  개
+                  <span class="spandesu" id="span1"></span>
+                </span>
+              </li>
+              <li>
+                <span class="score"> 소프트웨어 개발: </span>
+                <span
+                  >20문제 중
+                  <input
+                    type="text"
+                    id="input2"
+                    class="scoreinput"
+                    placeholder="0"
+                    onkeyup="keyup2()"
+                  />
+                  개 <span class="spandesu" id="span2"></span>
+                </span>
+              </li>
+              <li>
+                <span class="score"> 데이터베이스 구축: </span>
+                <span
+                  >20문제 중
+                  <input
+                    type="text"
+                    id="input3"
+                    class="scoreinput"
+                    placeholder="0"
+                    onkeyup="keyup3()"
+                  />
+                  개 <span class="spandesu" id="span3"></span>
+                </span>
+              </li>
+              <li>
+                <span class="score"> 프로그래밍 언어활용: </span>
+                <span
+                  >20문제 중
+                  <input
+                    type="text"
+                    id="input4"
+                    class="scoreinput"
+                    placeholder="0"
+                    onkeyup="keyup4()"
+                  />
+                  개 <span class="spandesu" id="span4"></span>
+                </span>
+              </li>
+              <li>
+                <span class="score"> 정보시스템 구축관리: </span>
+                <span
+                  >20문제 중
+                  <input
+                    type="text"
+                    id="input5"
+                    class="scoreinput"
+                    placeholder="0"
+                    onkeyup="keyup5()"
+                  />
+                  개 <span class="spandesu" id="span5"></span>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- 최종결과 출력용 버튼 생성 -->
+        <div id="resultBtn">
+          <input
+            type="button"
+            id="finalBtn"
+            value="최종 결과 확인"
+            onclick="finalResultbtn()"
+          />
+        </div>
+      </main>
+      <!-- ---------------------footer--------------------- -->
+      <footer id="footer" style="display: none">
+        <h2># 최종결과</h2>
+        <h4 id="finalResult">
+          합격: 100점을 만점으로 하여 과목당 40점 이상, 전과목 평균 60점 이상.
+        </h4>
+        <!-- 목록태그 생성 -->
+        <div>
+          <ul>
+            <li id="list1"></li>
+            <li id="list2"></li>
+          </ul>
+        </div>
+        <!-- 최종결과 출력용 영역 태그 및 하위 태그 생성 -->
+        <div>
+          <p id="final"></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

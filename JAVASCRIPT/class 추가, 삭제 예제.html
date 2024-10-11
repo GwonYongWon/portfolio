@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        let hBtn = document.querySelector("#highlightButton");
+        let cBtn = document.querySelector("#clearButton");
+
+        hBtn.addEventListener("click", function () {
+          // 모든 .text 클래스를 가진 요소를 선택
+          const pTag = document.querySelectorAll(".text");
+
+          for (let e of pTag) {
+            e.classList.add("highlight");
+          }
+        });
+        cBtn.addEventListener("click", function () {
+          // 모든 .text 클래스를 가진 요소를 선택
+          const pTag = document.querySelectorAll(".text");
+
+          for (let e of pTag) {
+            e.classList.remove("highlight");
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>querySelectorAll 예제</h1>
+    <p class="text">첫 번째 문장</p>
+    <p class="text">두 번째 문장</p>
+    <p class="text">세 번째 문장</p>
+    <div>
+      <p class="text">네 번째 문장</p>
+    </div>
+    <button id="highlightButton">강조</button>
+    <button id="clearButton">강조 제거</button>
+  </body>
+</html>
+<!--
+  HTML 문서 구조
+  <head> 태그에는 메타 정보와 스타일 시트가 정의됩니다.
+  <body> 태그에는 문장들과 버튼들이 포함되어 있습니다.
+  
+  CSS 스타일
+  .highlight 클래스는 배경색을 노란색으로 지정합니다.
+
+  JavaScript
+  window.onload 함수: 문서가 로드된 후 실행됩니다.
+
+  이벤트 리스너 추가:
+  highlightButton 버튼을 클릭하면, .text 클래스를 가진 모든 요소에 highlight 클래스가 추가됩니다.
+  clearButton 버튼을 클릭하면, .text 클래스를 가진 모든 요소에서 highlight 클래스가 제거됩니다.
+  document.querySelectorAll: 지정된 CSS 선택자에 해당하는 모든 요소를 선택합니다.
+  classList.add 및 classList.remove: 요소의 클래스 목록에 클래스를 추가하거나 제거합니다.
+  
+  HTML 요소
+  각 문장들은 .text 클래스를 가지고 있어, JavaScript에서 쉽게 선택할 수 있습니다.
+  버튼들은 각각 highlightButton과 clearButton ID를 가지고 있어, JavaScript에서 식별할 수 있습니다.
+-->

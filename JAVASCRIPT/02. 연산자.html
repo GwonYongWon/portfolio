@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+            1. 산술연산자 p.43
+            +, -, *, /, **, %, ++, --
+
+            2. 대입연산자 p.46
+            =, +=, -=, *=, /=, %=
+
+            3. 비교연산자 p.49
+            >. >=, <, <=, ==, !=, ===, !--
+
+            4. 논리연산자 p.52
+            &&, ||, !
+
+            5. 타입연산자
+            typeof, instanceof
+            - instanceof는 객체가 특정 클래스나 생성자 함수와
+              인스턴스인지 여부를 확인 주로 객체 타입확인에 사용
+      */
+
+      // 문자열 연산
+      let text1 = "홍";
+      let text2 = "길동";
+      let text3 = text1 + " " + text2;
+      console.log(text3);
+
+      let a = 10,
+        b = 20;
+      let str = a + "와 " + b + "의 \n합계 값은 = ";
+      +(a + b);
+      console.log(str);
+
+      // template 문자열
+      // 변수, 함수 호출, 객체의 속성에 접근 가능
+      let template = `${a}와 ${b}의 \n합계 값= ${a + b}`; // 줄바꿈 : 백틱(`)으로 템플릿 리터럴을 사용하면, 줄바꿈 등을 쉽게 표현할 수 있다.
+      //표현식 삽입 : ${ } 사이에 변수나 연산 등을 삽입할 수 있게 되었다.
+
+      console.log(template);
+
+      // 비교
+      let num1 = 50;
+      let num2 = "50";
+      let num3 = 30;
+      let num4 = "30";
+
+      console.log(num1 == num2);
+      console.log(num1 === num2);
+      console.log(num1 !== num2);
+
+      // 논리연산
+      console.log(num1 < num3 || num1 > num3);
+    </script>
+  </head>
+  <body></body>
+</html>

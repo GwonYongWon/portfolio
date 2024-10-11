@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>데이터 출력 예제</title>
+    <style>
+      /* 테이블과 셀의 스타일 설정 */
+      table,
+      td,
+      th {
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 30px;
+        font-size: 20px;
+      }
+      th {
+        background-color: beige;
+      }
+    </style>
+    <script>
+      // 데이터 목록을 열고 화면에 출력하는 함수
+      function openList() {
+        // 데이터 배열 정의
+        let list = [
+          { 이름: "홍길동", 등급: "일반회원", 가입일: "20/01/03" },
+          { 이름: "손오공", 등급: "실버회원", 가입일: "22/05/05" },
+          { 이름: "이순신", 등급: "골드회원", 가입일: "19/03/22" },
+        ];
+
+        // 데이터를 테이블 형식으로 가공
+        let str = `<table>`;
+        str += `<tr><th>이름</th><th>등급</th><th>가입일</th></tr>`;
+        for (let i = 0; i < list.length; i++) {
+          str += `<tr>`;
+          str += `<td>${list[i]["이름"]}</td>`;
+          str += `<td>${list[i]["등급"]}</td>`;
+          str += `<td>${list[i]["가입일"]}</td>`;
+          str += `<tr>`;
+        }
+        str += `<table>`;
+
+        document.querySelector("#target").style.display = "block";
+        document.querySelector("#target").innerHTML = str;
+      }
+      function closeList() {
+        document.querySelector("#target").style.display = "none";
+      }
+
+      /* gpt    
+          let table = "<table><tr><th>이름</th><th>등급</th><th>가입일</th></tr>";
+          for (let i = 0; i < list.length; i++) {
+            table +=
+              "<tr><td>" +
+              list[i].이름 +
+              "</td><td>" +
+              list[i].등급 +
+              "</td><td>" +
+              list[i].가입일 +
+              "</td></tr>";
+          }
+          table += "</table>";
+
+          // 테이블을 화면의 특정 div에 삽입하여 표시
+          document.getElementById("target").innerHTML = table;
+        }
+
+        // 데이터 목록을 닫는 함수
+        function closeList() {
+          // 데이터 목록을 비워 화면에서 숨김
+          document.getElementById("target").innerHTML = "";
+        }
+        */
+    </script>
+  </head>
+  <body>
+    <!-- 데이터 목록을 열기 위한 버튼 -->
+    <input type="button" value="정보 보기" onclick="openList()" />
+    <!-- 데이터 목록을 닫기 위한 버튼 -->
+    <input type="button" value="정보 닫기" onclick="closeList()" />
+    <!-- 데이터가 표시될 div -->
+    <div id="target"></div>
+  </body>
+</html>
